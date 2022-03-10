@@ -4,7 +4,7 @@ from math import *
 import os
 
 def recupdermessage():
-	token = 'OTEyNDg2ODc2NDEyMjc2Nzc3.YZwpoA.ih-tIjzWEQobgs54y6mjAaVj3J8'
+	token = input('entre ton token :')
 	client = discord.Client()
 	@client.event
 	async def on_ready():
@@ -13,7 +13,7 @@ def recupdermessage():
 		channel = client.get_channel(912495325997064193)
 		message = await channel.fetch_message(channel.last_message_id)
 		nomUtilisateur =  message.author
-		nomUtilisateur = nomUtilisateur.id
+		idUtilisateur = nomUtilisateur.id
 		mes.write(message.content+'\n')
 		mes.write(str(nomUtilisateur))
 		user = await client.fetch_user(711967096820465777)
