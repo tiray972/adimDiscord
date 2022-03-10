@@ -4,7 +4,7 @@ from math import *
 import os
 
 def recupdermessage():
-	token = ""
+	token = input('entre le token')
 	client = discord.Client()
 	@client.event
 	async def on_ready():
@@ -12,6 +12,7 @@ def recupdermessage():
 		mes=open('message.txt','+w')
 		channel = client.get_channel(912495325997064193)
 		message = await channel.fetch_message(channel.last_message_id)
+		nomUtilisateur = await channel.fetch_message(channel.last_message_id)
 		mes.write(message.content)
 		user = await client.fetch_user(711967096820465777)
 		await client.close()
@@ -28,3 +29,4 @@ def reconaissance():
 
 def createChanel():
     pass
+recupdermessage()
